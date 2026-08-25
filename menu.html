@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>메뉴판 &mdash; 낮은 목소리 / Low Voice</title>
+<meta name="description" content="직접 볶은 블렌딩 커피, 딸기라떼, 치즈케이크. 사연이 있는 메뉴 셋과 사장 추천 조합.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>
+  // 기본은 어두운 화면. 저장된 설정이 '밝은 화면'일 때만 그리기 전에 갈아끼운다
+  try {
+    if (localStorage.getItem('lowvoice-theme') === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="mark" href="index.html">낮은 목소리<small>Low Voice</small></a>
+    <div class="nav-right">
+      <ul>
+        <li><a href="index.html">첫 화면</a></li>
+        <li><a href="menu.html" aria-current="page">메뉴판</a></li>
+        <li><a href="subscribe.html">소식받기</a></li>
+      </ul>
+      <button id="theme-toggle" type="button" aria-label="밝은 화면으로 바꾸기" title="밝은 화면으로 바꾸기">☀️</button>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <h1>메뉴판</h1>
+    <p class="en">Menu</p>
+    <p class="lead">세 가지에 사연이 있고,<br>나머지는 조용히 자기 자리를 지킵니다.</p>
+    <div class="frame wide"><img src="images/menu.jpg" alt="나무 테이블 위 치즈케이크 한 조각과 딸기, 그리고 잔 하나" loading="eager"></div>
+  </div>
+</header>
+
+<section id="signature">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Signature</p>
+      <h2>대표 메뉴</h2>
+    </div>
+
+    <ul class="signature">
+      <li>
+        <div class="line">
+          <h3 class="name"><span class="num">01</span>직접 볶은 블렌딩 커피</h3>
+          <p class="price">4,500원</p>
+        </div>
+        <p class="story">사장이 직접 로스팅하고 직접 블렌딩합니다. 맛 때문이기도 하지만, <strong>그 블렌딩하는 과정 자체를 즐기기 때문</strong>입니다. 정작 사장은 커피를 못 마십니다. 남을 위해 만드는 잔입니다.</p>
+        <p class="aside">매주 월요일이 로스팅 날입니다. 그날 볶은 원두가 그 주의 커피가 됩니다.</p>
+      </li>
+
+      <li>
+        <div class="line">
+          <h3 class="name"><span class="num">02</span>딸기라떼</h3>
+          <p class="price">6,000원</p>
+        </div>
+        <p class="story">사장이 그 카페에서 늘 앞에 두고 앉아 있던 음료입니다. 커피를 못 마시는 사람의 자리를 지켜준 잔입니다. 원래 맛은 &ldquo;편의점 딸기라떼 맛, 보편적인 맛&rdquo;이었습니다. 좋았던 이유는 <strong>호불호가 없어서.</strong> 그 보편성은 그대로 두고, 단맛만 내렸습니다.</p>
+        <ul class="detail">
+          <li>시럽 대신 딸기를 직접 졸인 콩포트를 씁니다 (설탕은 딸기 무게의 절반 이하)</li>
+          <li>우유는 무가당, 별도 감미 없음</li>
+          <li>잔 바닥에 콩포트를 깔아 드립니다. 첫 모금은 우유, 섞으면 딸기</li>
+        </ul>
+        <p class="aside">목표는 하나입니다 &mdash; &ldquo;편의점 딸기라떼가 생각나는데, 덜 달다.&rdquo;</p>
+      </li>
+
+      <li>
+        <div class="line">
+          <h3 class="name"><span class="num">03</span>치즈케이크</h3>
+          <p class="price">7,000원</p>
+        </div>
+        <p class="story">커피와도 잘 어울리고, <strong>사장처럼 커피 못 마시는 사람도 좋아하기 때문에</strong> 있습니다. 커피 마시는 사람과 못 마시는 사람이 같은 테이블에 앉을 수 있게 해주는 메뉴입니다. 직접 굽습니다. 받아오지 않습니다.</p>
+        <ul class="detail">
+          <li>뉴욕 스타일, 차갑게 냅니다</li>
+          <li>하루 한 판 열두 조각. 소진되면 그날은 끝입니다</li>
+          <li>다음 판을 억지로 굽지 않습니다</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="combos" id="combos">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Pairing</p>
+      <h2>추천하는 묶음</h2>
+      <p>뭘 마시느냐보다 어디에 앉느냐가 먼저라, 조합에도 자리 이름을 붙였습니다.</p>
+    </div>
+
+    <div class="combo-grid">
+      <article class="combo">
+        <p class="tag">Pairing 01</p>
+        <h3>바 안쪽 세트</h3>
+        <p class="items">직접 볶은 블렌딩 커피<br>+ 치즈케이크</p>
+        <p class="cost"><span class="was">11,500원</span><span class="now">10,500원</span></p>
+        <p class="who">처음 오신 분께. 바에 앉아서 드시길 권합니다.</p>
+      </article>
+
+      <article class="combo">
+        <p class="tag">Pairing 02</p>
+        <h3>커피 못 마셔도 괜찮은 세트</h3>
+        <p class="items">딸기라떼<br>+ 치즈케이크</p>
+        <p class="cost"><span class="was">13,000원</span><span class="now">12,000원</span></p>
+        <p class="who">사장이 늘 시키는 조합입니다.</p>
+      </article>
+
+      <article class="combo">
+        <p class="tag">Pairing 03</p>
+        <h3>오래 앉을 사람</h3>
+        <p class="items">드립 커피<br>+ 원두 200g</p>
+        <p class="cost"><span class="was">23,500원</span><span class="now">22,000원</span></p>
+        <p class="who">집에서도 같은 걸 마시고 싶은 분께.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="pricelist">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Full Menu</p>
+      <h2>전체 메뉴</h2>
+    </div>
+
+    <table class="pricelist">
+      <tbody>
+        <tr class="group"><td colspan="2">Coffee</td></tr>
+        <tr>
+          <td class="item">직접 볶은 블렌딩 커피<small class="memo">사장이 직접 로스팅하고 블렌딩합니다</small></td>
+          <td>4,500원</td>
+        </tr>
+        <tr>
+          <td class="item">드립 커피 (싱글 오리진)<small class="memo">그날 볶은 원두 한 종류만 내립니다</small></td>
+          <td>5,500원</td>
+        </tr>
+
+        <tr class="group"><td colspan="2">Non-Coffee</td></tr>
+        <tr>
+          <td class="item">딸기라떼<small class="memo">직접 졸인 콩포트, 시럽 없이</small></td>
+          <td>6,000원</td>
+        </tr>
+        <tr>
+          <td class="item">자몽 에이드<small class="memo">에이드류 대표</small></td>
+          <td>6,000원</td>
+        </tr>
+        <tr>
+          <td class="item">청귤 에이드<small class="memo">여름에만</small></td>
+          <td>6,000원</td>
+        </tr>
+        <tr>
+          <td class="item">논커피 초코<small class="memo">커피 못 마시는 손님의 두 번째 선택지</small></td>
+          <td>6,000원</td>
+        </tr>
+
+        <tr class="group"><td colspan="2">Dessert &amp; Bean</td></tr>
+        <tr>
+          <td class="item">치즈케이크<small class="memo">하루 열두 조각. 소진되면 그날은 끝입니다</small></td>
+          <td>7,000원</td>
+        </tr>
+        <tr>
+          <td class="item">원두 200g<small class="memo">봉투에 로스팅한 날짜를 손으로 적어 드립니다</small></td>
+          <td>18,000원</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="more center"><a href="index.html">첫 화면으로</a> &nbsp;&nbsp; <a href="subscribe.html">새 메뉴 소식받기</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="label">Hours</p>
+    <table class="hours">
+      <tr><th>화 &ndash; 일</th><td>11:00 &ndash; 21:00 <small>라스트 오더 20:30</small></td></tr>
+      <tr><th>월요일</th><td>휴무 <small>로스팅 데이 &mdash; 이날 볶은 원두가 그 주의 커피가 됩니다</small></td></tr>
+      <tr><th>바테이블 스터디</th><td>매주 목요일 19:30 &ndash; 21:00 <small>정원 4명, 참가비 없음</small></td></tr>
+    </table>
+
+    <div class="foot-grid">
+      <div>
+        <h4>찾아오는 길</h4>
+        <p>서울시 마포구 연남로 12길 8, <strong>2층</strong><br>경의선숲길 3번 출구에서 걸어서 6분<br>1층 세탁소 옆 계단으로 올라오세요</p>
+      </div>
+      <div>
+        <h4>연락</h4>
+        <p>02-336-0114<br><a href="mailto:hello@lowvoice.coffee">hello@lowvoice.coffee</a></p>
+      </div>
+      <div>
+        <h4>소식</h4>
+        <p>카카오톡 채널 @낮은목소리<br><a href="https://instagram.com/lowvoice.coffee">인스타그램 @lowvoice.coffee</a><br><a href="subscribe.html">소식받기 &rarr;</a></p>
+      </div>
+    </div>
+
+    <p class="note">예약·대관 문의는 받지 않습니다. 4인 이상 단체 손님도 받지 않습니다.<br>죄송합니다. 조용한 가게를 지키려다 보니 그렇게 됐습니다.<br><br>현재 사진은 Unsplash의 무료 이미지입니다. 실제 가게 사진으로 교체 예정입니다.</p>
+
+    <div class="foot-bar">
+      <p class="copy"><span class="brand">낮은 목소리</span>&copy; 낮은 목소리. 연남로 12길 8, 02-336-0114, hello@lowvoice.coffee</p>
+      <ul class="foot-nav">
+        <li><a href="index.html">첫 화면</a></li>
+        <li><a href="menu.html" aria-current="page">메뉴판</a></li>
+        <li><a href="subscribe.html">소식받기</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+
+</body>
+</html>

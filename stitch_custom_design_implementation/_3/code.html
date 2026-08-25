@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>낮은 목소리</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=GMarketSans:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        @font-face {
+            font-family: 'GMarketSans';
+            font-weight: 300;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+        }
+        @font-face {
+            font-family: 'GMarketSans';
+            font-weight: 500;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+        }
+        @font-face {
+            font-family: 'GMarketSans';
+            font-weight: 700;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+        }
+        
+        .ambient-shadow:hover {
+            box-shadow: 0 12px 24px -10px rgba(109, 98, 90, 0.28);
+            transform: translateY(-6px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "surface-tint": "#615e58",
+                        "on-secondary-container": "#795a49",
+                        "surface-container-high": "#f1e6de",
+                        "on-primary-fixed-variant": "#494741",
+                        "inverse-surface": "#352f2a",
+                        "tertiary": "#94483f",
+                        "on-tertiary-container": "#a5554c",
+                        "card": "#FBF8F3",
+                        "surface-container": "#f7ece4",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#e2d8d0",
+                        "on-primary-container": "#6f6c66",
+                        "ink-soft": "#6D625A",
+                        "outline": "#7a776f",
+                        "secondary-container": "#fdd5be",
+                        "ink-faint": "#9C9086",
+                        "on-tertiary-fixed-variant": "#77312a",
+                        "line": "#DCD3C6",
+                        "primary": "#615e58",
+                        "outline-variant": "#cbc6bc",
+                        "on-tertiary-fixed": "#3d0605",
+                        "on-surface": "#1f1b16",
+                        "on-secondary-fixed-variant": "#5c4130",
+                        "primary-container": "#f4efe7",
+                        "on-background": "#1f1b16",
+                        "tertiary-fixed": "#ffdad5",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#cac6be",
+                        "on-secondary-fixed": "#2b1609",
+                        "surface-container-highest": "#ebe1d9",
+                        "primary-fixed": "#e7e2da",
+                        "secondary-fixed-dim": "#e6bea9",
+                        "on-primary-fixed": "#1d1c17",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#cac6be",
+                        "surface-bright": "#fff8f4",
+                        "tertiary-fixed-dim": "#ffb4aa",
+                        "surface-variant": "#ebe1d9",
+                        "tertiary-container": "#ffebe8",
+                        "paper-2": "#EDE6DB",
+                        "on-primary": "#ffffff",
+                        "surface": "#fff8f4",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#49473f",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "background": "#fff8f4",
+                        "secondary": "#765846",
+                        "secondary-fixed": "#ffdbc8",
+                        "inverse-on-surface": "#f9efe7",
+                        "surface-container-low": "#fcf2ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "measure": "34rem",
+                        "unit-sm": "0.5rem",
+                        "base": "8px",
+                        "section-v": "4.5rem",
+                        "unit-lg": "2rem",
+                        "unit-md": "1rem",
+                        "gutter": "1.75rem",
+                        "wrap-max": "56rem"
+                    },
+                    "fontFamily": {
+                        "page-h1": ["GMarketSans"],
+                        "hero-h1-mobile": ["GMarketSans"],
+                        "h2": ["GMarketSans"],
+                        "h3": ["GMarketSans"],
+                        "page-h1-mobile": ["GMarketSans"],
+                        "label": ["GMarketSans"],
+                        "hero-h1": ["GMarketSans"],
+                        "body": ["GMarketSans"]
+                    },
+                    "fontSize": {
+                        "page-h1": ["60px", { "lineHeight": "1.2", "fontWeight": "300" }],
+                        "hero-h1-mobile": ["46px", { "lineHeight": "1.2", "fontWeight": "300" }],
+                        "h2": ["32px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "h3": ["18px", { "lineHeight": "1.5", "fontWeight": "500" }],
+                        "page-h1-mobile": ["38px", { "lineHeight": "1.2", "fontWeight": "300" }],
+                        "label": ["11px", { "lineHeight": "1.0", "letterSpacing": "0.3em", "fontWeight": "300" }],
+                        "hero-h1": ["80px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300" }],
+                        "body": ["16px", { "lineHeight": "1.95", "fontWeight": "300" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body text-body selection:bg-secondary-container selection:text-on-surface antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky bg-background border-b border-line z-50">
+<div class="flex justify-between items-center max-w-wrap-max mx-auto px-gutter py-unit-md">
+<a class="font-page-h1-mobile text-page-h1-mobile text-on-surface" href="#">낮은 목소리</a>
+<div class="hidden md:flex gap-unit-lg items-center">
+<a class="text-on-surface border-b border-on-surface pb-1 font-body text-body hover:text-on-surface transition-colors duration-320" href="#">첫 화면</a>
+<a class="text-ink-soft font-body text-body hover:text-on-surface transition-colors duration-320" href="#">메뉴판</a>
+<a class="text-ink-soft font-body text-body hover:text-on-surface transition-colors duration-320" href="#">소식받기</a>
+<button class="text-primary hover:text-on-surface transition-colors duration-320 flex items-center justify-center translate-y-[2px] transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="dark_mode" data-weight="fill" style="font-variation-settings: 'FILL' 1;">dark_mode</span>
+</button>
+</div>
+<!-- Mobile Menu Toggle (Visual Only) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="max-w-wrap-max mx-auto px-gutter mt-section-v">
+<!-- Section 1: Hero -->
+<section class="mb-section-v md:mb-[9rem] flex flex-col items-center text-center">
+<h1 class="font-hero-h1-mobile md:font-hero-h1 text-hero-h1-mobile md:text-hero-h1 text-on-surface mb-unit-lg">낮은 목소리</h1>
+<p class="font-h3 text-h3 text-ink-soft max-w-measure">
+                커피보다는 사람이, 상업보다는 이타주의가 머무는 공간. 조용하고 정직한 시간을 제안합니다.
+            </p>
+<div class="mt-section-v w-full aspect-[2/1] md:aspect-[3/1] bg-surface-container relative overflow-hidden group">
+<img class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700 ease-in-out" data-alt="A warm, cinematic, close-up photograph of a minimalist cafe wooden bar counter bathed in soft, diffused natural light filtering through a window. The surface is textured wood, and in the blurred background, soft outlines of espresso equipment and warm amber lighting create a cozy, unhurried, analog atmosphere. Low contrast, muted tones, and high-end editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTMV-flj574S56QLJKlWJTwUgMbd9ANjRvEP5e5HOkW4Yo_1mJA7E7NuOmE78vJWBKlwAANamzxIy7WLTVhJVAFHEVsfPz6SsUsZyNY29lxmhwreDP9j__rhXOVdtKUBC8kpPv4KjcIKWu6f67Fp0ckvRcp2PKlFK453thj2F6xE3TF8bgIGV2qjtxpUHAlIXJEaNvKY8tCgDc7j62AXu8dwqtNSXbmOJkW5w6ZNzWsXeSGCjSM5SI">
+</div>
+</section>
+<!-- Divider -->
+<hr class="border-t border-line w-full my-section-v">
+<!-- Section 2: Intro Story -->
+<section class="flex flex-col items-center text-center my-section-v">
+<span class="font-label text-label text-ink-faint mb-unit-md">ORIGIN</span>
+<div class="max-w-measure">
+<p class="font-body text-body text-on-surface mb-unit-md text-left">
+                    이 공간은 본래 작은 영어 스터디 그룹을 위한 모임 장소로 시작되었습니다. 커피를 파는 것이 목적이 아니라, 사람들이 모여 이야기하고 배우는 고요한 안식처를 마련하고자 했던 주인의 이타적인 마음이 형태를 갖춘 곳입니다.
+                </p>
+<p class="font-body text-body text-ink-soft text-left">
+                    소란스러운 도심 속에서 잠시 목소리를 낮추고, 서로의 존재에 온전히 집중할 수 있는 쉼표 같은 공간이 되기를 바랍니다.
+                </p>
+</div>
+</section>
+<!-- Divider -->
+<hr class="border-t border-line w-full my-section-v">
+<!-- Section 3: Regulars (Bento/Card Layout) -->
+<section class="my-section-v">
+<div class="text-center mb-unit-lg">
+<span class="font-label text-label text-ink-faint">STORIES</span>
+<h2 class="font-h2 text-h2 text-on-surface mt-unit-sm">머무는 사람들</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-unit-md">
+<div class="bg-card p-unit-lg transition-transform duration-320 ambient-shadow cursor-default flex flex-col justify-between h-full">
+<p class="font-body text-body text-on-surface mb-unit-lg">"여기서는 책을 읽을 때 남의 시선을 신경 쓰지 않아도 돼서 좋아요. 백색소음마저 정돈된 느낌입니다."</p>
+<span class="font-label text-label text-ink-soft">— 단골 손님 A</span>
+</div>
+<div class="bg-card p-unit-lg transition-transform duration-320 ambient-shadow cursor-default flex flex-col justify-between h-full">
+<p class="font-body text-body text-on-surface mb-unit-lg">"커피 맛을 따지기 전에, 문을 열고 들어오는 순간 느껴지는 공기의 온도가 저를 위로합니다."</p>
+<span class="font-label text-label text-ink-soft">— 주말 방문자</span>
+</div>
+<div class="bg-card p-unit-lg transition-transform duration-320 ambient-shadow cursor-default flex flex-col justify-between h-full">
+<p class="font-body text-body text-on-surface mb-unit-lg">"화려한 간판도, 시끄러운 음악도 없지만 그 결핍이 오히려 풍요롭게 느껴지는 희한한 곳이죠."</p>
+<span class="font-label text-label text-ink-soft">— 작업자 C</span>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<hr class="border-t border-line w-full my-section-v">
+<!-- Section 4: Mood -->
+<section class="flex flex-col md:flex-row gap-gutter my-section-v items-start md:items-center">
+<div class="flex-1">
+<span class="font-label text-label text-ink-faint mb-unit-md block">ATMOSPHERE</span>
+<h2 class="font-h2 text-h2 text-on-surface mb-unit-lg">낮은 톤의 공간</h2>
+<p class="font-body text-body text-on-surface mb-unit-sm">
+                    우리는 백색의 쨍한 조명 대신 은은한 전구색을 씁니다. 귀를 때리는 팝송 대신, 비 오는 날 어울릴 법한 재즈나 잔잔한 연주곡을 틉니다.
+                </p>
+<p class="font-body text-body text-ink-soft">
+                    눈과 귀, 마음이 피로하지 않도록 공간의 모든 요소를 의도적으로 덜어내고 톤을 낮췄습니다.
+                </p>
+</div>
+<div class="flex-1 w-full aspect-square bg-paper-2 p-unit-lg flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A minimalist, top-down editorial photo of a simple matte ceramic coffee cup resting on a textured handmade paper surface next to a single dry autumn leaf. The lighting is soft and subdued, casting gentle, elongated shadows, evoking a sense of quiet meditation, restraint, and an unhurried lifestyle. Warm earth tones predominantly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlwGVoYiplAkT-4sUSlvZJsI8DtiDn5w3XYBE_PcOJTYe1Gh4r1kDT_B_wqqeeQPzrp1-Id436X9Nib3vuW7bbxlGqa4vUgNXAJWxzbUmtCL4tba9yagJThw_27PDG2fz5m9DB_D2H6AZp43dnydhlhyGeYTsTzZQ74-4MpMBfcfKHDKcu0XyzBR0Y1y_i0Nu2O5M_mMo8eZgL9AEJQ3__JLPmzow5LPxjruxLYzaT6LzdOMSSoJP6">
+</div>
+</section>
+<!-- Divider -->
+<hr class="border-t border-line w-full my-section-v">
+<!-- Section 5: Filter (Rejection) -->
+<section class="my-section-v py-section-v bg-surface-container-high text-center px-unit-lg">
+<div class="max-w-measure mx-auto">
+<span class="font-label text-label text-error mb-unit-lg block tracking-[0.3em]">NOTICE</span>
+<h2 class="font-page-h1-mobile md:font-page-h1 text-page-h1-mobile md:text-page-h1 text-on-surface mb-unit-lg">
+                    4인 이상 안 받습니다
+                </h2>
+<p class="font-body text-body text-on-surface">
+                    공간의 고요함을 지키기 위한 이기적이고 단호한 규칙입니다.<br> 
+                    혼자만의 시간, 혹은 둘, 셋이서 속삭이는 대화만을 환영합니다.
+                </p>
+</div>
+</section>
+<!-- Divider -->
+<hr class="border-t border-line w-full my-section-v">
+<!-- Section 6: Menu Preview -->
+<section class="my-section-v">
+<div class="text-center mb-unit-lg">
+<span class="font-label text-label text-ink-faint block mb-unit-sm">MENU</span>
+<h2 class="font-h2 text-h2 text-on-surface">간단한 음료들</h2>
+</div>
+<div class="flex flex-col gap-unit-lg max-w-measure mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-baseline border-b border-line pb-unit-md">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">드립 커피</h3>
+<p class="font-body text-body text-ink-soft text-sm mt-1">기계 소리 대신 물 떨어지는 소리만 남도록.</p>
+</div>
+<div class="font-body text-body text-on-surface mt-2 md:mt-0">6.0</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-baseline border-b border-line pb-unit-md">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">따뜻한 차</h3>
+<p class="font-body text-body text-ink-soft text-sm mt-1">계절에 맞는 허브를 조용히 우려냅니다.</p>
+</div>
+<div class="font-body text-body text-on-surface mt-2 md:mt-0">6.5</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-baseline border-b border-line pb-unit-md">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">위스키 한 잔</h3>
+<p class="font-body text-body text-ink-soft text-sm mt-1">늦은 저녁, 홀로 책을 읽는 이들을 위해.</p>
+</div>
+<div class="font-body text-body text-on-surface mt-2 md:mt-0">12.0</div>
+</div>
+</div>
+<div class="text-center mt-unit-lg">
+<button class="font-label text-label text-ink-soft border-b border-ink-soft pb-1 hover:text-on-surface hover:border-on-surface transition-colors duration-300">전체 메뉴 보기</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-section-v bg-surface-container-low border-t border-line">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-wrap-max mx-auto px-gutter py-unit-lg text-center md:text-left">
+<div class="mb-unit-md md:mb-0">
+<h3 class="font-h3 text-h3 text-on-surface mb-unit-sm">낮은 목소리</h3>
+<p class="font-label text-label text-ink-soft">© 낮은 목소리. 연남로 12길 8, 02-336-0114, hello@lowvoice.coffee</p>
+</div>
+<div class="flex gap-unit-md">
+<a class="font-label text-label text-ink-faint hover:text-on-surface transition-opacity duration-300" href="#">Instagram</a>
+<a class="font-label text-label text-ink-faint hover:text-on-surface transition-opacity duration-300" href="#">Naver Map</a>
+</div>
+</div>
+</footer>
+</body></html>

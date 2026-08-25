@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>낮은 목소리 - 메뉴판</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Subtle scroll animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#fff8f4",
+                      "on-surface": "#1f1b16",
+                      "ink-soft": "#6D625A",
+                      "ink-faint": "#9C9086",
+                      "line": "#DCD3C6",
+                      "primary": "#615e58",
+                      "secondary": "#765846",
+                      "surface-container-low": "#fcf2ea",
+                      "card": "#FBF8F3",
+                      "on-secondary": "#ffffff",
+                      "surface-dim": "#e2d8d0",
+                      "on-primary-container": "#6f6c66",
+                      "outline": "#7a776f",
+                      "secondary-container": "#fdd5be",
+                      "on-tertiary-fixed-variant": "#77312a",
+                      "outline-variant": "#cbc6bc",
+                      "on-tertiary-fixed": "#3d0605",
+                      "on-secondary-fixed-variant": "#5c4130",
+                      "primary-container": "#f4efe7",
+                      "on-background": "#1f1b16",
+                      "tertiary-fixed": "#ffdad5",
+                      "on-error-container": "#93000a",
+                      "primary-fixed-dim": "#cac6be",
+                      "on-secondary-fixed": "#2b1609",
+                      "surface-container-highest": "#ebe1d9",
+                      "primary-fixed": "#e7e2da",
+                      "secondary-fixed-dim": "#e6bea9",
+                      "on-primary-fixed": "#1d1c17",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#cac6be",
+                      "surface-bright": "#fff8f4",
+                      "tertiary-fixed-dim": "#ffb4aa",
+                      "surface-variant": "#ebe1d9",
+                      "tertiary-container": "#ffebe8",
+                      "paper-2": "#EDE6DB",
+                      "on-primary": "#ffffff",
+                      "surface": "#fff8f4",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#49473f",
+                      "error": "#ba1a1a",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#ffdbc8",
+                      "inverse-on-surface": "#f9efe7",
+                      "coffee": "#5c4130"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "measure": "34rem",
+                      "unit-sm": "0.5rem",
+                      "base": "8px",
+                      "section-v": "4.5rem",
+                      "unit-lg": "2rem",
+                      "unit-md": "1rem",
+                      "gutter": "1.75rem",
+                      "wrap-max": "56rem"
+              },
+              "fontFamily": {
+                      "page-h1": ["GmarketSans", "sans-serif"],
+                      "hero-h1-mobile": ["GmarketSans", "sans-serif"],
+                      "h2": ["GmarketSans", "sans-serif"],
+                      "h3": ["GmarketSans", "sans-serif"],
+                      "page-h1-mobile": ["GmarketSans", "sans-serif"],
+                      "label": ["GmarketSans", "sans-serif"],
+                      "hero-h1": ["GmarketSans", "sans-serif"],
+                      "body": ["GmarketSans", "sans-serif"]
+              },
+              "fontSize": {
+                      "page-h1": ["60px", { "lineHeight": "1.2", "fontWeight": "300" }],
+                      "hero-h1-mobile": ["46px", { "lineHeight": "1.2", "fontWeight": "300" }],
+                      "h2": ["32px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                      "h3": ["18px", { "lineHeight": "1.5", "fontWeight": "500" }],
+                      "page-h1-mobile": ["38px", { "lineHeight": "1.2", "fontWeight": "300" }],
+                      "label": ["11px", { "lineHeight": "1.0", "letterSpacing": "0.3em", "fontWeight": "300" }],
+                      "hero-h1": ["80px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300" }],
+                      "body": ["16px", { "lineHeight": "1.95", "fontWeight": "300" }]
+              }
+            },
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body antialiased selection:bg-secondary-container selection:text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<nav class="w-full top-0 sticky z-50 bg-background border-b border-line">
+<div class="flex justify-between items-center max-w-wrap-max mx-auto px-gutter py-unit-md">
+<a class="font-page-h1-mobile text-page-h1-mobile text-on-surface" href="#">낮은 목소리</a>
+<div class="hidden md:flex space-x-8">
+<a class="text-ink-soft hover:text-on-surface transition-colors duration-320 font-body text-body" href="#">첫 화면</a>
+<!-- Active State -->
+<a class="text-on-surface border-b border-on-surface pb-1 font-body text-body translate-y-[2px] transition-transform duration-200" href="#">메뉴판</a>
+<a class="text-ink-soft hover:text-on-surface transition-colors duration-320 font-body text-body" href="#">소식받기</a>
+</div>
+<button class="text-primary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow max-w-wrap-max mx-auto w-full px-gutter md:px-0">
+<!-- Header Section -->
+<header class="py-section-v md:py-[120px] text-center max-w-measure mx-auto fade-up">
+<h1 class="font-page-h1 text-page-h1 md:font-hero-h1 md:text-hero-h1 text-on-surface mb-unit-lg">메뉴판</h1>
+<p class="font-body text-body text-ink-soft">시간이 멈춘 듯한 공간에서, 당신의 낮은 목소리가 가장 잘 들리기를 바랍니다.</p>
+</header>
+<!-- Divider -->
+<div class="w-full h-px bg-line my-section-v"></div>
+<!-- 1. Signature Menu -->
+<section class="mb-section-v fade-up max-w-measure mx-auto">
+<h2 class="font-h2 text-h2 text-on-surface mb-unit-lg text-center md:text-left">대표 메뉴</h2>
+<div class="space-y-unit-lg">
+<!-- Signature Item 1 -->
+<article class="flex flex-col border-t border-line pt-unit-md">
+<div class="flex justify-between items-baseline mb-unit-sm">
+<h3 class="font-h3 text-h3 text-on-surface">주인의 드립</h3>
+<span class="font-body text-body text-secondary">7,500</span>
+</div>
+<p class="font-body text-body text-ink-soft">
+                            매일 아침, 온도를 맞추고 천천히 물을 내립니다. 서두르지 않는 과정 속에서 피어나는 깊은 향은, 바쁜 일상 속 작은 쉼표가 되기를 바라는 마음을 담았습니다.
+                        </p>
+</article>
+<!-- Signature Item 2 -->
+<article class="flex flex-col border-t border-line pt-unit-md">
+<div class="flex justify-between items-baseline mb-unit-sm">
+<h3 class="font-h3 text-h3 text-on-surface">따뜻한 차</h3>
+<span class="font-body text-body text-secondary">6,000</span>
+</div>
+<p class="font-body text-body text-ink-soft">
+                            자연이 허락한 붉은빛만을 고집합니다. 인공적인 단맛 없이, 베리 본연의 새콤함과 은은한 단맛이 어우러져 피곤한 오후에 생기를 불어넣습니다.
+                        </p>
+</article>
+<!-- Signature Item 3 -->
+<article class="flex flex-col border-t border-line pt-unit-md">
+<div class="flex justify-between items-baseline mb-unit-sm">
+<h3 class="font-h3 text-h3 text-on-surface">위스키 한 잔</h3>
+<span class="font-body text-body text-secondary">12,000</span>
+</div>
+<p class="font-body text-body text-ink-soft">
+                            가장 짙은 녹색은 고요함을 품고 있습니다. 쌉싸름한 첫맛 뒤에 남는 깊은 여운은, 말없이 창밖을 바라볼 때 가장 잘 어울리는 한 잔입니다.
+                        </p>
+</article>
+</div>
+</section>
+<!-- Divider -->
+<div class="w-full h-px bg-line my-section-v"></div>
+<!-- 2. Recommended Pairings -->
+<section class="mb-section-v fade-up max-w-measure mx-auto">
+<h2 class="font-h2 text-h2 text-on-surface mb-unit-lg text-center md:text-left">추천하는 묶음</h2>
+<div class="space-y-unit-lg">
+<!-- Pairing Item 1 -->
+<article class="flex flex-col border-t border-line pt-unit-md">
+<span class="font-label text-label text-ink-faint mb-unit-sm uppercase tracking-[0.3em]">PAIRING 01</span>
+<div class="flex justify-between items-baseline mb-unit-sm">
+<h3 class="font-h3 text-h3 text-on-surface">아메리카노 &amp; 휘낭시에</h3>
+<span class="font-body text-body text-secondary">9,500</span>
+</div>
+<p class="font-body text-body text-ink-soft">
+                        깔끔한 커피와 버터의 진한 풍미가 만나는 가장 기본적인 위로.
+                    </p>
+</article>
+<!-- Pairing Item 2 -->
+<article class="flex flex-col border-t border-line pt-unit-md">
+<span class="font-label text-label text-ink-faint mb-unit-sm uppercase tracking-[0.3em]">PAIRING 02</span>
+<div class="flex justify-between items-baseline mb-unit-sm">
+<h3 class="font-h3 text-h3 text-on-surface">밀크티 &amp; 얼그레이 파운드</h3>
+<span class="font-body text-body text-secondary">11,000</span>
+</div>
+<p class="font-body text-body text-ink-soft">
+                        홍차 향이 겹겹이 쌓이는, 비 오는 날에 권하고 싶은 묵직함.
+                    </p>
+</article>
+<!-- Pairing Item 3 -->
+<article class="flex flex-col border-t border-line pt-unit-md">
+<span class="font-label text-label text-ink-faint mb-unit-sm uppercase tracking-[0.3em]">PAIRING 03</span>
+<div class="flex justify-between items-baseline mb-unit-sm">
+<h3 class="font-h3 text-h3 text-on-surface">위스키 &amp; 다크 초콜릿</h3>
+<span class="font-body text-body text-secondary">15,000</span>
+</div>
+<p class="font-body text-body text-ink-soft">
+                        강렬한 위스키와 쌉싸름한 카카오가 입안에서 융화되는 완벽한 균형.
+                    </p>
+</article>
+</div>
+</section>
+<!-- Divider -->
+<div class="w-full h-px bg-line my-section-v"></div>
+<!-- 3. Full Price List -->
+<section class="mb-section-v fade-up max-w-measure mx-auto">
+<h2 class="font-h2 text-h2 text-on-surface mb-unit-lg text-center md:text-left">전체 메뉴</h2>
+<div class="space-y-section-v/2">
+<!-- Drinks -->
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-unit-md border-b border-line pb-unit-sm">Coffee</h3>
+<ul class="space-y-unit-sm font-body text-body">
+<li class="flex justify-between hover:text-on-surface text-ink-soft transition-colors">
+<span>에스프레소</span>
+<span class="text-secondary">4,500</span>
+</li>
+<li class="flex justify-between hover:text-on-surface text-ink-soft transition-colors">
+<span>아메리카노</span>
+<span class="text-secondary">5,000</span>
+</li>
+<li class="flex justify-between hover:text-on-surface text-ink-soft transition-colors">
+<span>카페 라떼</span>
+<span class="text-secondary">5,500</span>
+</li>
+<li class="flex justify-between hover:text-on-surface text-ink-soft transition-colors">
+<span>바닐라 빈 라떼</span>
+<span class="text-secondary">6,000</span>
+</li>
+</ul>
+</div>
+<!-- Non-Coffee -->
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-unit-md border-b border-line pb-unit-sm">Non-Coffee</h3>
+<ul class="space-y-unit-sm font-body text-body">
+<li class="flex justify-between hover:text-on-surface text-ink-soft transition-colors">
+<span>초콜릿 라떼</span>
+<span class="text-secondary">6,000</span>
+</li>
+<li class="flex justify-between hover:text-on-surface text-ink-soft transition-colors">
+<span>밀크티</span>
+<span class="text-secondary">6,500</span>
+</li>
+<li class="flex justify-between hover:text-on-surface text-ink-soft transition-colors">
+<span>계절 에이드</span>
+<span class="text-secondary">6,500</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full mt-section-v bg-surface-container-low border-t border-line">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-wrap-max mx-auto px-gutter py-unit-lg text-center md:text-left">
+<div class="mb-unit-md md:mb-0">
+<p class="font-h3 text-h3 text-on-surface">낮은 목소리</p>
+<p class="font-label text-label text-ink-soft mt-unit-sm">
+                    © 낮은 목소리. 연남로 12길 8, 02-336-0114, hello@lowvoice.coffee
+                </p>
+</div>
+<div class="flex space-x-unit-md font-label text-label">
+<a class="text-ink-faint hover:text-on-surface transition-opacity duration-300" href="#">Instagram</a>
+<a class="text-ink-faint hover:text-on-surface transition-opacity duration-300" href="#">Naver Map</a>
+</div>
+</div>
+</footer>
+<!-- Simple Intersection Observer for scroll animations -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        });
+    </script>
+</body></html>

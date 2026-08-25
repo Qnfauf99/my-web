@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소식받기 &mdash; 낮은 목소리 / Low Voice</title>
+<meta name="description" content="새 메뉴, 클래스, 이벤트 소식을 담백하게. 주 1회 이하로만 보냅니다.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>
+  // 기본은 어두운 화면. 저장된 설정이 '밝은 화면'일 때만 그리기 전에 갈아끼운다
+  try {
+    if (localStorage.getItem('lowvoice-theme') === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="mark" href="index.html">낮은 목소리<small>Low Voice</small></a>
+    <div class="nav-right">
+      <ul>
+        <li><a href="index.html">첫 화면</a></li>
+        <li><a href="menu.html">메뉴판</a></li>
+        <li><a href="subscribe.html" aria-current="page">소식받기</a></li>
+      </ul>
+      <button id="theme-toggle" type="button" aria-label="밝은 화면으로 바꾸기" title="밝은 화면으로 바꾸기">☀️</button>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <h1>소식받기</h1>
+    <p class="en">Subscribe</p>
+    <p class="lead">원두를 볶은 날과 메뉴가 바뀐 날에만.<br>보낼 게 없으면 보내지 않습니다.</p>
+    <div class="frame wide"><img src="images/roasting.jpg" alt="갓 볶은 원두를 국자로 고르는 손" loading="eager"></div>
+  </div>
+</header>
+
+<section id="what">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">News</p>
+      <h2>알려드릴 게 생겼을 때만<br>연락드립니다.</h2>
+      <p>새 메뉴, 클래스, 이벤트. 주 1회 이하.</p>
+    </div>
+
+    <ul class="senses">
+      <li>
+        <span class="k">새 메뉴</span>
+        <p class="v"><em>바뀐 레시피, 계절 음료</em>딸기라떼처럼 레시피를 손보면 왜 바꿨는지도 같이 적습니다. 청귤 에이드는 여름에만 나오니 그때 알려드릴게요.</p>
+      </li>
+      <li>
+        <span class="k">클래스</span>
+        <p class="v"><em>바테이블 스터디</em>매주 목요일 저녁, 네 명이 바에 둘러앉습니다. 참가비는 없습니다. 자리가 나면 바로 알려드립니다.</p>
+      </li>
+      <li>
+        <span class="k">이벤트</span>
+        <p class="v"><em>로스팅 데이, 원두 나눔</em>월요일에 볶습니다. 새로 볶은 원두를 먼저 맛보실 분을 가끔 몇 분만 모십니다.</p>
+      </li>
+      <li>
+        <span class="k">그날의 사정</span>
+        <p class="v"><em>휴무, 치즈케이크 소진</em>치즈케이크는 하루 열두 조각뿐이라 일찍 끝나는 날이 있습니다. 헛걸음하지 않으시게 적어 보냅니다.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="tone">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Tone</p>
+      <h2>그냥 담백하게.</h2>
+      <p>과장하지 않고, 이모지를 남발하지 않고, &ldquo;역대급&rdquo;이나 &ldquo;미쳤다&rdquo; 같은 말을 쓰지 않습니다. 사실을 사실대로 적습니다. 그게 낮은 목소리입니다.</p>
+    </div>
+
+    <ul class="posts">
+      <li>오늘 에티오피아 예가체프 볶았습니다. 내일부터 드실 수 있어요.</li>
+      <li>딸기라떼 레시피를 바꿨습니다. 전보다 덜 달아요. 한번 드셔보시고 알려주세요.</li>
+      <li>이번 주 월요일은 로스팅 날이라 문 닫습니다. 화요일에 뵐게요.</li>
+      <li>치즈케이크는 오늘 다 나갔습니다. 내일 다시 굽습니다.</li>
+      <li>바테이블 스터디 이번 달은 네 자리 다 찼습니다. 다음 달에 다시 열게요.</li>
+    </ul>
+
+    <blockquote>
+      <p>주 1회 이하로 보냅니다. 한 번에 사진 한 장과 두세 문장, 그게 전부입니다. 링크도 해시태그도 없습니다.</p>
+    </blockquote>
+  </div>
+</section>
+
+<section class="signup" id="signup">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Subscribe</p>
+      <h2>이름과 이메일만<br>남겨주세요.</h2>
+    </div>
+
+    <form class="form-card" id="subscribe-form" novalidate>
+      <div class="field">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" placeholder="가게에서 불러드릴 이름" autocomplete="name" required>
+      </div>
+
+      <div class="field">
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email" placeholder="lowvoice@example.com" autocomplete="email" required>
+        <p class="hint" id="form-hint">보내는 곳은 여기 하나뿐입니다. 다른 데 쓰지 않습니다.</p>
+      </div>
+
+      <button class="submit" type="submit">소식 받아보기</button>
+
+      <p class="consent">언제든 그만 받으실 수 있습니다. 메일 맨 아래 &ldquo;그만 받기&rdquo;를 누르시거나, 가게에 오셔서 말씀만 해주세요.</p>
+    </form>
+
+    <div class="thanks" id="thanks" hidden>
+      <h3 id="thanks-title">고맙습니다.</h3>
+      <p id="thanks-body"></p>
+      <p class="again"><button type="button" id="again">다른 이메일로 다시 신청하기</button></p>
+    </div>
+  </div>
+</section>
+
+<section id="study">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Study</p>
+      <h2>이 모임이 이 가게의<br>진짜 대표 메뉴입니다.</h2>
+      <p>사장이 직접 굴리는 모임 하나. 예전 그 카페의 영어 스터디가 그랬듯이, 그때 파고 있는 것을 아낌없이 풉니다.</p>
+    </div>
+
+    <ul class="senses">
+      <li><span class="k">언제</span><p class="v">매주 목요일 19:30 &ndash; 21:00</p></li>
+      <li><span class="k">몇 명</span><p class="v">네 명. 바에 둘러앉을 수 있는 만큼만.</p></li>
+      <li><span class="k">참가비</span><p class="v">없습니다. 음료는 각자 주문해주세요.</p></li>
+      <li><span class="k">신청</span><p class="v">메일이나 방문으로만 받습니다. 신청 폼은 만들지 않았습니다.</p></li>
+    </ul>
+
+    <blockquote>
+      <p>자기가 발전하는 걸 모두가 같이 발전했으면 좋겠다면서, 본인 지식이나 노하우를 아낌없이 방출하는 사장님이었습니다. 그 자리를 여기서 이어보려 합니다.</p>
+    </blockquote>
+
+    <p class="more"><a href="index.html">&larr; 첫 화면으로</a> &nbsp;&nbsp; <a href="menu.html">메뉴판 보기 &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="label">Hours</p>
+    <table class="hours">
+      <tr><th>화 &ndash; 일</th><td>11:00 &ndash; 21:00 <small>라스트 오더 20:30</small></td></tr>
+      <tr><th>월요일</th><td>휴무 <small>로스팅 데이 &mdash; 이날 볶은 원두가 그 주의 커피가 됩니다</small></td></tr>
+      <tr><th>바테이블 스터디</th><td>매주 목요일 19:30 &ndash; 21:00 <small>정원 4명, 참가비 없음</small></td></tr>
+    </table>
+
+    <div class="foot-grid">
+      <div>
+        <h4>찾아오는 길</h4>
+        <p>서울시 마포구 연남로 12길 8, <strong>2층</strong><br>경의선숲길 3번 출구에서 걸어서 6분<br>1층 세탁소 옆 계단으로 올라오세요</p>
+      </div>
+      <div>
+        <h4>연락</h4>
+        <p>02-336-0114<br><a href="mailto:hello@lowvoice.coffee">hello@lowvoice.coffee</a></p>
+      </div>
+      <div>
+        <h4>소식</h4>
+        <p>카카오톡 채널 @낮은목소리<br><a href="https://instagram.com/lowvoice.coffee">인스타그램 @lowvoice.coffee</a><br><a href="subscribe.html">소식받기 &rarr;</a></p>
+      </div>
+    </div>
+
+    <p class="note">예약·대관 문의는 받지 않습니다. 4인 이상 단체 손님도 받지 않습니다.<br>죄송합니다. 조용한 가게를 지키려다 보니 그렇게 됐습니다.<br><br>현재 사진은 Unsplash의 무료 이미지입니다. 실제 가게 사진으로 교체 예정입니다.</p>
+
+    <div class="foot-bar">
+      <p class="copy"><span class="brand">낮은 목소리</span>&copy; 낮은 목소리. 연남로 12길 8, 02-336-0114, hello@lowvoice.coffee</p>
+      <ul class="foot-nav">
+        <li><a href="index.html">첫 화면</a></li>
+        <li><a href="menu.html">메뉴판</a></li>
+        <li><a href="subscribe.html" aria-current="page">소식받기</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+  (function () {
+    var form = document.getElementById('subscribe-form');
+    var hint = document.getElementById('form-hint');
+    var thanks = document.getElementById('thanks');
+    var title = document.getElementById('thanks-title');
+    var body = document.getElementById('thanks-body');
+    var again = document.getElementById('again');
+    var nameField = document.getElementById('name');
+    var emailField = document.getElementById('email');
+    var calm = '보내는 곳은 여기 하나뿐입니다. 다른 데 쓰지 않습니다.';
+
+    // ── 색종이 ──────────────────────────────────────────────
+    // 가게 색(커피·딸기·종이)으로만 떨어뜨린다. 요란하지 않게, 3초쯤.
+    function confetti() {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      var old = document.getElementById('confetti');
+      if (old) old.remove();
+
+      var canvas = document.createElement('canvas');
+      canvas.id = 'confetti';
+      document.body.appendChild(canvas);
+
+      var ctx = canvas.getContext('2d');
+      var dpr = window.devicePixelRatio || 1;
+      var w, h;
+
+      function resize() {
+        w = canvas.clientWidth;
+        h = canvas.clientHeight;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      var styles = getComputedStyle(document.documentElement);
+      var palette = ['--coffee', '--berry', '--ink-faint', '--card', '--line']
+        .map(function (name) { return styles.getPropertyValue(name).trim(); })
+        .filter(Boolean);
+
+      var pieces = [];
+      for (var i = 0; i < 90; i++) {
+        pieces.push({
+          x: Math.random() * w,
+          y: -20 - Math.random() * h * 0.6,
+          w: 5 + Math.random() * 6,
+          h: 8 + Math.random() * 10,
+          color: palette[i % palette.length],
+          vy: 55 + Math.random() * 75,          // 천천히 내려온다
+          drift: (Math.random() - 0.5) * 40,
+          spin: (Math.random() - 0.5) * 3,
+          angle: Math.random() * Math.PI * 2,
+          sway: Math.random() * Math.PI * 2
+        });
+      }
+
+      var start = null;
+      var last = null;
+      var DURATION = 3400;
+
+      function frame(now) {
+        if (start === null) { start = now; last = now; }
+        var dt = Math.min((now - last) / 1000, 0.05);
+        last = now;
+        var elapsed = now - start;
+
+        ctx.clearRect(0, 0, w, h);
+
+        for (var j = 0; j < pieces.length; j++) {
+          var p = pieces[j];
+          p.sway += dt * 2;
+          p.y += p.vy * dt;
+          p.x += (p.drift + Math.sin(p.sway) * 22) * dt;
+          p.angle += p.spin * dt;
+
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.angle);
+          ctx.fillStyle = p.color;
+          ctx.globalAlpha = 0.9;
+          ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * Math.abs(Math.cos(p.angle)) + 1);
+          ctx.restore();
+        }
+
+        if (elapsed < DURATION) {
+          requestAnimationFrame(frame);
+        } else {
+          canvas.classList.add('fading');
+          setTimeout(function () {
+            window.removeEventListener('resize', resize);
+            canvas.remove();
+          }, 900);
+        }
+      }
+      requestAnimationFrame(frame);
+    }
+
+    function say(message, isError) {
+      hint.textContent = message;
+      hint.className = isError ? 'hint error' : 'hint';
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      var name = nameField.value.trim();
+      var email = emailField.value.trim();
+
+      if (!name) {
+        say('이름을 적어주세요. 불러드릴 때 쓰겠습니다.', true);
+        nameField.focus();
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        say('이메일 주소를 다시 봐주세요. 잘못 적으면 소식이 못 갑니다.', true);
+        emailField.focus();
+        return;
+      }
+
+      say(calm, false);
+      title.textContent = name + '님, 고맙습니다.';
+      body.textContent =
+        '목록에 넣었습니다. 원두를 볶은 날과 메뉴가 바뀐 날에만 ' + email + '으로 연락드리겠습니다. ' +
+        '보낼 게 없으면 보내지 않겠습니다. 오시면 바 안쪽에 있겠습니다.';
+
+      form.hidden = true;
+      thanks.hidden = false;
+      thanks.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      confetti();
+    });
+
+    again.addEventListener('click', function () {
+      form.reset();
+      say(calm, false);
+      thanks.hidden = true;
+      form.hidden = false;
+      nameField.focus();
+    });
+  })();
+</script>
+
+</body>
+</html>
